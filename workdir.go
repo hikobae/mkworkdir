@@ -23,12 +23,7 @@ type WorkDir struct {
 }
 
 func getWorkDir() (path string) {
-	path = os.Getenv(EnvWorkDir)
-	if path != "" {
-		return
-	}
-
-	var keys = []string{"TEMP", "TMP"}
+	var keys = []string{EnvWorkDir, "TEMP", "TMP"}
 	for _, key := range keys {
 		path = os.Getenv(key)
 		if path != "" {
