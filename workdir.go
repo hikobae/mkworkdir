@@ -6,8 +6,6 @@ import (
 	"os"
 	"path/filepath"
 	"time"
-
-	"github.com/skratchdot/open-golang/open"
 )
 
 const (
@@ -55,7 +53,7 @@ func (w *WorkDir) Open() error {
 	if !w.IsOpen() {
 		return nil
 	}
-	return open.Run(w.Path)
+	return open(w.Path)
 }
 
 // IsOpen returns true if EnvWorkDirOpen is set in environment variables.
